@@ -1,0 +1,24 @@
+{
+  "name": "discordselfbot",
+  "version": "0.1.0",
+  "description": "miniproject with discord.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "-debug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MGF1998/solstice-self.git"
+  },
+  "keywords": [
+    "discord",
+    "selfbot",
+    "bot"
+  ],
+  "author": "TrueMGF",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/MGF1998/solstice-self/issues"
+  },
+  "homepage": "https://github.com/MGF1998/solstice-self#readme"
+}
