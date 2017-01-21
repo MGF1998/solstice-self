@@ -1,2 +1,4 @@
 node_modules/
 settings.js
+data/avys/*
+!data/avys/example.avylist.js
