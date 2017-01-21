@@ -4,7 +4,7 @@ module.exports = function(bot,msg,args,options){
         msg.edit("`Your game currently is "+bot.user.presence.game.name+"`");
         msg.delete(3000);
     } else {
-        if (args[0] === "reset" || "null") {
+        if (args[0] === "reset" || args[0] === "null") {
             bot.user.setGame(null);
             console.log("Attempting to clear game status.");
             msg.edit("`Resetting your game.`");
