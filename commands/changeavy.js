@@ -10,8 +10,10 @@ module.exports = function (bot, msg, args, options) {
         bot.user.setAvatar(avylist[args[0]].url)
             .then( () => {
                 console.log("Avatar changed to "+args[0]);
-                msg.edit("`Avatar changed to "+args[0]+"`");
-                msg.delete(2000);
+                msg.edit("`"+avylist[args[0]].desc+"`");
+                if (options.settings.deleteMsgs) {
+                    msg.delete(2000);
+                }
             })
             .catch(console.error);
     } else {
