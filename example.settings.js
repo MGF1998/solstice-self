@@ -6,4 +6,6 @@ module.exports = {
     user_token: "your super secret token - seriously, keep this secret!",  
     //Set the prefix for your selfbot. Make it something that doesn't conflict with other bots.
     prefix: "self ",
+    //Should the message be deleted automatically, or just edited? (true deletes the message.)
+    deleteMsgs: true,
 };
