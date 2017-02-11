@@ -6,6 +6,9 @@ module.exports = function (bot, msg, args, options) {
         console.log("Random avys coming soon");
     } else if (args[0] === "list") {
         console.log(avylist);
+        if (options.settings.deleteMsgs) {
+            msg.delete(2000);
+        }
     } else if (avylist.hasOwnProperty(args[0])) {
         bot.user.setAvatar(avylist[args[0]].url)
             .then( () => {
