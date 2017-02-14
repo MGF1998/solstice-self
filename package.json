@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "description": "miniproject with discord.js",
   "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.0.0",
+    "opusscript": "0.0.1",
+    "ytdl-core": "^0.7.24",
+    "gm": "1.23.0"
+  },
   "scripts": {
     "test": "-debug"
   },

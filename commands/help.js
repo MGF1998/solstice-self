@@ -10,14 +10,14 @@ module.exports = function (bot, msg, args, options) {
             embed.setAuthor("Solstice Self Help | " + args[0], "http://truemgf.de/images/lightbulb_self_discord.png");
             embed.setColor([255, 0, 75]);
             embed.setTitle("TL;DR:");
-            embed.setDescription(commands[args[0]].help_indepth);
-            if (commands[args[0]].help_args) {
-                embed.addField("Arguments", commands[args[0]].help_args);
+            embed.setDescription(commands[args[0]].help.indepth);
+            if (commands[args[0]].help.args) {
+                embed.addField("Arguments", commands[args[0]].help.args);
             } else {
                 embed.addField("Arguments", "This command takes no arguments.");
             }
-            if (commands[args[0]].help_aliases) {
-                embed.addField("Aliases", commands[args[0]].help_aliases);
+            if (commands[args[0]].aliases) {
+                embed.addField("Aliases", commands[args[0]].aliases);
             } else {
                 embed.addField("Aliases", "This command has no aliases.");
             }
@@ -28,7 +28,7 @@ module.exports = function (bot, msg, args, options) {
     } else { // No command specified, list all commands that are not hidden
         eachObject(commands, (command,key) => {
             if (!command.hidden) {
-                reply.push(key, " ".repeat(15 - key.length), command.help_text, "\n");
+                reply.push(key, " ".repeat(15 - key.length), command.help.text, "\n");
             }
         });
         msg.channel.sendMessage("```" + reply.join("") + "```");
