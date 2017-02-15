@@ -1,6 +1,7 @@
 const help = require("./../commands/help");
 const changeavy = require("./../commands/changeavy");
 const changegame = require("./../commands/changegame");
+const wewlad = require("./../commands/wewlad");
 
 module.exports = {
     changegame: {
@@ -33,4 +34,15 @@ module.exports = {
         },
         aliases: ["help"],
     },
+    wewlad: {
+        function: wewlad,
+        hidden: false,
+        help: {
+            text: "wew",
+            indepth: "wew, lad",
+            args: "wew/lad"
+        },
+        aliases: ["wew","wewlad"],
+
+    }
 };
