@@ -3,6 +3,7 @@ const changeavy = require("./../commands/changeavy");
 const changegame = require("./../commands/changegame");
 const wewlad = require("./../commands/wewlad");
 const codeblockmeme = require("./../commands/codeblockmeme");
+const clapifier = require("./../commands/clapifier");
 
 module.exports = {
     changegame: {
@@ -55,6 +56,17 @@ module.exports = {
             args: "[string]"
         },
         aliases: ["codememe","blockmeme","blockify"],
+
+    },
+    clapifier: {
+        function: clapifier,
+        hidden: false,
+        help: {
+            text: ":clap:",
+            indepth: "T:clap:h:clap:i:clap:s:clap: :clap:i:clap:s:clap: :clap:f:clap:i:clap:n:clap:e",
+            args: "[string]"
+        },
+        aliases: ["clapify","clapifier","clap"],
 
     }
 };
