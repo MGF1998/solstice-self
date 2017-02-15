@@ -2,6 +2,7 @@ const help = require("./../commands/help");
 const changeavy = require("./../commands/changeavy");
 const changegame = require("./../commands/changegame");
 const wewlad = require("./../commands/wewlad");
+const codeblockmeme = require("./../commands/codeblockmeme");
 
 module.exports = {
     changegame: {
@@ -43,6 +44,17 @@ module.exports = {
             args: "wew/lad"
         },
         aliases: ["wew","wewlad"],
+
+    },
+    codeblockmeme: {
+        function: codeblockmeme,
+        hidden: false,
+        help: {
+            text: "B A S E D   B O T",
+            indepth: "LUL MEMES",
+            args: "[string]"
+        },
+        aliases: ["codememe","blockmeme","blockify"],
 
     }
 };
