@@ -4,6 +4,7 @@ const changegame = require("./../commands/changegame");
 const wewlad = require("./../commands/wewlad");
 const codeblockmeme = require("./../commands/codeblockmeme");
 const clapifier = require("./../commands/clapifier");
+const gamecountdown = require("./../commands/gamecountdown");
 
 module.exports = {
     changegame: {
@@ -68,5 +69,15 @@ module.exports = {
         },
         aliases: ["clapify","clapifier","clap"],
 
+    },
+    gamecountdown: {
+        function: gamecountdown,
+        hidden: false,
+        help: {
+            text: "Counts down to a specified time in game status.",
+            indepth: "Counts down to a specified time in your game status. To prevent spam/ratelimiting, the update is limited to minutes.",
+            args: "[target/'clear'] [mode] [string]"
+        },
+        aliases: ["countdown","gamecountdown","gametimer"],
     }
 };
