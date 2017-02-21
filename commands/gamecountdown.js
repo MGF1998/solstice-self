@@ -56,6 +56,11 @@ module.exports = function(bot,msg,args,options){
                 if (string) {newStatus = string;}
                 newStatus += (time.d+1)+" days";
                 break;
+            case "inversehrs":
+            case "stringfirsthrs":
+                if (string) {newStatus = string;}
+                newStatus += time.d+" days, "+time.h+" hours";
+                break;
             default: 
                 newStatus = time.d+"d"+time.h+"h"+time.m+"m";
                 if (string) {newStatus += " "+string;}
