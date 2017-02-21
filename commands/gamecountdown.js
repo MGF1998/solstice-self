@@ -13,7 +13,7 @@ module.exports = function(bot,msg,args,options){
     };
     const refresh = function() {
         let now = new Date();
-        time.raw = (now.getTime()-target.getTime())/1000;
+        time.raw = (target.getTime()-now.getTime())/1000;
         time.d = Math.floor(time.raw/86400);
         time.h = Math.floor((time.raw%86400)/3600);
         time.m = Math.floor((time.raw%3600)/60);
