@@ -36,20 +36,25 @@ module.exports = function(bot,msg,args,options){
                 break;
             case "daysonly":
             case "days":
-                newStatus = time.d+" days";
+                newStatus = (time.d+1)+" days";
                 if (string) {newStatus += " "+string;}
                 break;
             case "inverse":
             case "string_first":
             case "stringfirst":
-                if (string) {newStatus += " "+string;}
+                if (string) {newStatus = string;}
                 newStatus += time.d+"d"+time.h+"h"+time.m+"m";
                 break;
             case "inverselong":
             case "string_first_long":
             case "stringfirstlong":
-                if (string) {newStatus += " "+string;}
-                newStatus += time.d+"d"+time.h+"h"+time.m+"m";
+                if (string) {newStatus = string;}
+                newStatus += time.d+" days "+time.h+" hours "+time.m+" minutes";
+                break;
+            case "inversedays":
+            case "stringfirstdays":
+                if (string) {newStatus = string;}
+                newStatus += (time.d+1)+" days";
                 break;
             default: 
                 newStatus = time.d+"d"+time.h+"h"+time.m+"m";
