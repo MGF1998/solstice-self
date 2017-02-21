@@ -30,9 +30,26 @@ module.exports = function(bot,msg,args,options){
         let string = args[2];
         let newStatus;
         switch (mode) {
-            case "1":
-                newStatus = time.d+"days, "+time.h+"hours, "+time.m+"mins";
+            case "long":
+                newStatus = time.d+" days "+time.h+" hours "+time.m+" mins";
                 if (string) {newStatus += " "+string;}
+                break;
+            case "daysonly":
+            case "days":
+                newStatus = time.d+" days";
+                if (string) {newStatus += " "+string;}
+                break;
+            case "inverse":
+            case "string_first":
+            case "stringfirst":
+                if (string) {newStatus += " "+string;}
+                newStatus += time.d+"d"+time.h+"h"+time.m+"m";
+                break;
+            case "inverselong":
+            case "string_first_long":
+            case "stringfirstlong":
+                if (string) {newStatus += " "+string;}
+                newStatus += time.d+"d"+time.h+"h"+time.m+"m";
                 break;
             default: 
                 newStatus = time.d+"d"+time.h+"h"+time.m+"m";
@@ -59,6 +76,9 @@ module.exports = function(bot,msg,args,options){
     if (args[0] === "clear") {
         if (bot.globalVars.interval) {
             msg.edit("`Stopping countdown, resetting your game.`");
+            if (options.settings.deleteMsgs) {
+                msg.delete(2000);
+            }
             clearInterval(bot.globalVars.interval);
             bot.user.setGame(null);
         } else {
