@@ -1,5 +1,5 @@
 module.exports = function(bot,msg,args,options){
-    let interval,target;
+    let target;
     let time = {
         raw: 0,
         d: 0,
@@ -42,7 +42,7 @@ module.exports = function(bot,msg,args,options){
         let currentStatus = bot.user.presence.game;
         if (newStatus !== undefined) {
             if (currentStatus === null || currentStatus.name !== newStatus) {
-                bot.user.setGame(newStatus).then(ret => console.log("Status updated: "+newStatus+" "+ret)).catch(err => console.log(err));
+                bot.user.setGame(newStatus).then(() => console.log("Status updated: "+newStatus)).catch(err => console.log(err));
             }
         } else {
             console.log("Error - newStatus returned undefined.");
@@ -57,8 +57,9 @@ module.exports = function(bot,msg,args,options){
         return;
     }
     if (args[0] === "clear") {
-        if (interval) {
-            clearInterval(interval);
+        if (bot.globalVars.interval) {
+            msg.edit("`Stopping countdown, resetting your game.`");
+            clearInterval(bot.globalVars.interval);
             bot.user.setGame(null);
         } else {
             msg.edit("`No timer running.`");
@@ -76,7 +77,7 @@ module.exports = function(bot,msg,args,options){
             if(options.settings.deleteMsgs) {
                 msg.delete(3000);
             }
-            interval = setInterval(refresh,10000);
+            bot.globalVars.interval = setInterval(refresh,10000);
         }
     }
 };
