@@ -5,6 +5,7 @@ const wewlad = require("./../commands/wewlad");
 const codeblockmeme = require("./../commands/codeblockmeme");
 const clapifier = require("./../commands/clapifier");
 const gamecountdown = require("./../commands/gamecountdown");
+const musicstatus = require("./../commands/musicstatus.js");
 
 module.exports = {
     changegame: {
@@ -79,5 +80,15 @@ module.exports = {
             args: "[target/'clear'] [mode] [string]"
         },
         aliases: ["countdown","gamecountdown","gametimer"],
+    },
+    musicstatus: {
+        function: musicstatus,
+        hidden: false,
+        help: {
+            text: "Toggles UNP Listening.",
+            indepth: "Will make the selfbot listen to changes to the defined UNP folder and set your current music to your playing status.",
+            args: false,
+        },
+        aliases: ["musicstatus","nowlistening","unp","np"],
     }
 };

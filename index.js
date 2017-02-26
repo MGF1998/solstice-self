@@ -5,7 +5,7 @@ const parseCommands = require("./methods/parseCommands");
 const commands = require("./data/commands");
 const commandKeys = Object.keys(commands); 
 bot.globalVars = {
-    interval: null,
+    game_interval: null,
 };
 
 const commandCheck = function(call) {
