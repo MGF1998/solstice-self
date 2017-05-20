@@ -6,6 +6,7 @@ const codeblockmeme = require("./../commands/codeblockmeme");
 const clapifier = require("./../commands/clapifier");
 const gamecountdown = require("./../commands/gamecountdown");
 const musicstatus = require("./../commands/musicstatus.js");
+const penis = require("./../commands/penis.js");
 
 module.exports = {
     changegame: {
@@ -90,5 +91,15 @@ module.exports = {
             args: false,
         },
         aliases: ["musicstatus","nowlistening","unp","np"],
+    },
+    penis: {
+        function: penis,
+        hidden: false,
+        help: {
+            text: "penis penis penis",
+            indepth: "penis penis penis penis penis",
+            args: "amount of dicc",
+        },
+        aliases: ["dick","dicksout","penis","harambe"],
     }
 };
