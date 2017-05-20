@@ -84,12 +84,13 @@ module.exports = function(bot,msg,args,options){
         return;
     }
     if (args[0] === "clear") {
-        if (bot.globalVars.interval) {
+        if (bot.globalVars.game_interval) {
             msg.edit("`Stopping countdown, resetting your game.`");
             if (options.settings.deleteMsgs) {
                 msg.delete(2000);
             }
-            clearInterval(bot.globalVars.interval);
+            clearInterval(bot.globalVars.game_interval);
+            bot.globalVars.game_interval = null;
             bot.user.setGame(null);
         } else {
             msg.edit("`No timer running.`");
@@ -107,7 +108,7 @@ module.exports = function(bot,msg,args,options){
             if(options.settings.deleteMsgs) {
                 msg.delete(3000);
             }
-            bot.globalVars.interval = setInterval(refresh,10000);
+            bot.globalVars.game_interval = setInterval(refresh,10000);
         }
     }
 };
