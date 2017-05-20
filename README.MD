@@ -1,11 +1,16 @@
-#Solstice-Self
-##The shitty sibling of Solstice, being all selfish.
+# Solstice-Self
+## The shitty sibling of Solstice, being all selfish.
+
+**I am not responsible for you getting banned by using this bot. It's all your fault if you do.**
+
+penis penis penis penis penis penis penis penis penis penis penis 
+
 
 This is the selfbot, loosely based on [Solstice](https://github.com/MGF1998/SolsticeBot). Mainly because I didn't want to rewrite the entire framework that we established.
 
 A huge thanks to [Discord.js](https://discord.js.org/#/) for making all of this possible.
 
-##Important!
+## Important!
 To have this bot work properly, you need to use your User token. This bot ONLY listens to itself - just like every selfbot should.
 
 So, you need to get your user token.
@@ -13,7 +18,7 @@ So, you need to get your user token.
 
 [Follow this link](https://eslachance.gitbooks.io/discord-js-bot-guide/content/samples/selfbots_are_awesome.html#the-token) to learn how to get your user token.
 
-##Required Setup
+## Required Setup
 Sometimes, npm is not happy with installing all necessary packages.
 Currently, we only use the Discord.js npm package, with Opusscript. No, this bot doesn't have voice functionality (yet).
 
